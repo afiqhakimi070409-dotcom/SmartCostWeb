@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+:root {
+  /* Color Tokens */
+  --sc-navy: #061830;
+  --sc-navy-end: #081D34;
+  --sc-navy-elevated: #0D1D34;
+  --sc-navy-border: rgba(127, 162, 212, 0.18);
+  --sc-accent: #1E40AF;
+  --sc-accent-hover: #1D4ED8;
+  --sc-surface-white: #FFFFFF;
+  --sc-surface-subtle: #F4F7FA;
+  --sc-border-hairline: #E2E8F0;
+  --sc-text-primary: #0F172A;
+  --sc-text-secondary: #475569;
+  --sc-text-muted: #64748B;
+
+  /* Typography Scale Tokens */
+  --sc-text-h1: clamp(2.25rem, 3.2vw, 3.125rem);
+  --sc-text-h2: clamp(1.75rem, 2.2vw, 2.125rem);
+  --sc-text-h3: 1.25rem;
+  --sc-text-body: 1.03125rem;
+  --sc-text-label: 0.78125rem;
+
+  /* Radius & Spacing Tokens */
+  --sc-radius-md: 6px;
+  --sc-radius-lg: 8px;
+  --sc-container-max: 1200px;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    color: var(--sc-text-primary);
+    background-color: var(--sc-surface-white);
+    font-size: 16px;
+  }
+
+  body {
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+    color: inherit;
+  }
+
+  button,
+  a,
+  input,
+  textarea,
+  select {
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+.sc-h1 {
+  font-size: var(--sc-text-h1);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+.sc-h2 {
+  font-size: var(--sc-text-h2);
+  line-height: 1.22;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+.sc-h3 {
+  font-size: var(--sc-text-h3);
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+.sc-eyebrow {
+  font-size: var(--sc-text-label);
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+
+.sc-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Navy Gradient & Accounting Line-Icon Pattern */
+.sc-navy-surface {
+  position: relative;
+  overflow: hidden;
+  background-color: #061830;
+  background-image: linear-gradient(135deg, #061830 0%, #081D34 100%);
+}
+
+.sc-accounting-pattern {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat;
+  background-size: 320px 320px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480' viewBox='0 0 480 480' fill='none' stroke='%237FA2D4' stroke-width='1.35' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg transform='translate(44 36) rotate(-10)'%3E%3Crect x='0' y='0' width='52' height='36' rx='4'/%3E%3Cpath d='M2 3l24 18L50 3'/%3E%3C/g%3E%3Cg transform='translate(174 26) rotate(8)'%3E%3Cpath d='M4 44h44M10 44V26h8v18M23 44V14h8v30M36 44V6h8v38'/%3E%3C/g%3E%3Cg transform='translate(300 58) rotate(-12)'%3E%3Ctext x='0' y='0' fill='none' stroke='%237FA2D4' stroke-width='1.25' font-family='sans-serif' font-size='26' font-weight='600' letter-spacing='1'%3ERM%3C/text%3E%3C/g%3E%3Cg transform='translate(410 38) rotate(14)'%3E%3Ccircle cx='22' cy='22' r='8'/%3E%3Cpath d='M22 4v4M22 36v4M4 22h4M36 22h4M9.3 9.3l2.8 2.8M31.9 31.9l2.8 2.8M34.7 9.3l-2.8 2.8M12.1 31.9l-2.8 2.8'/%3E%3Ccircle cx='22' cy='22' r='15'/%3E%3C/g%3E%3Cg transform='translate(28 144) rotate(6)'%3E%3Cpath d='M28 4v38M16 42h24M8 12h40M8 12l-6 14h12l-6-14zM48 12l-6 14h12l-6-14z'/%3E%3C/g%3E%3Cg transform='translate(148 128) rotate(-9)'%3E%3Cpath d='M8 2h24l10 10v42H8V2z'/%3E%3Cpath d='M32 2v10h10M15 22h18M15 30h18M15 38h11'/%3E%3C/g%3E%3Cg transform='translate(256 126) rotate(7)'%3E%3Crect x='6' y='4' width='56' height='36' rx='3'/%3E%3Cpath d='M0 44h68M16 30v-8M27 30V16M38 30v-11M49 30V12'/%3E%3C/g%3E%3Cg transform='translate(398 164) rotate(-14)'%3E%3Ccircle cx='8' cy='8' r='5'/%3E%3Ccircle cx='30' cy='28' r='5'/%3E%3Cpath d='M32 4L6 32'/%3E%3C/g%3E%3Cg transform='translate(54 252) rotate(-7)'%3E%3Crect x='2' y='8' width='40' height='48' rx='4'/%3E%3Crect x='13' y='2' width='18' height='8' rx='2'/%3E%3Cpath d='M10 24l4 4 7-7M26 26h10M10 38l4 4 7-7M26 40h10'/%3E%3C/g%3E%3Cg transform='translate(174 248) rotate(11)'%3E%3Ccircle cx='24' cy='24' r='22'/%3E%3Cpath d='M24 2v22h22M24 24L9 39'/%3E%3C/g%3E%3Cg transform='translate(298 258) rotate(-8)'%3E%3Cellipse cx='22' cy='10' rx='18' ry='6'/%3E%3Cpath d='M4 10v10c0 3.3 8.1 6 18 6s18-2.7 18-6V10M4 20v10c0 3.3 8.1 6 18 6s18-2.7 18-6V20M4 30v10c0 3.3 8.1 6 18 6s18-2.7 18-6V30'/%3E%3C/g%3E%3Cg transform='translate(406 254) rotate(15)'%3E%3Cpath d='M32 4l8 8L12 40H4v-8L32 4zM26 10l8 8'/%3E%3C/g%3E%3Cg transform='translate(34 378) rotate(-6)'%3E%3Cpath d='M2 38L18 22l12 10L50 8M38 8h12v12'/%3E%3C/g%3E%3Cg transform='translate(168 364) rotate(9)'%3E%3Crect x='2' y='2' width='40' height='54' rx='4'/%3E%3Crect x='8' y='8' width='28' height='12' rx='2'/%3E%3Cpath d='M10 28h5M19 28h5M28 28h5M10 37h5M19 37h5M28 37h5M10 46h5M19 46h5M28 46h5'/%3E%3C/g%3E%3Cg transform='translate(296 376) rotate(-11)'%3E%3Ccircle cx='18' cy='18' r='15'/%3E%3Cpath d='M29 29l13 13'/%3E%3C/g%3E%3Cg transform='translate(404 398) rotate(10)'%3E%3Ctext x='0' y='0' fill='none' stroke='%237FA2D4' stroke-width='1.25' font-family='sans-serif' font-size='22' font-weight='600' letter-spacing='1'%3ERM%3C/text%3E%3C/g%3E%3C/svg%3E");
+}
+
+@media (min-width: 768px) {
+  .sc-accounting-pattern {
+    background-size: 480px 480px;
+  }
+}
+
+.sc-accounting-pattern--hero {
+  opacity: 0.055;
+}
+
+@media (min-width: 768px) {
+  .sc-accounting-pattern--hero {
+    opacity: 0.105;
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.42) 0%,
+      rgba(0, 0, 0, 0.52) 42%,
+      rgba(0, 0, 0, 1) 66%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    mask-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.42) 0%,
+      rgba(0, 0, 0, 0.52) 42%,
+      rgba(0, 0, 0, 1) 66%,
+      rgba(0, 0, 0, 1) 100%
+    );
+  }
+}
+
+.sc-accounting-pattern--subtle {
+  opacity: 0.04;
+}
+
+@media (min-width: 768px) {
+  .sc-accounting-pattern--subtle {
+    opacity: 0.06;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}

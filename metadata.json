@@ -1,0 +1,8 @@
+{
+  "name": "Remix SmartCost Web ",
+  "description": "Sistem pengekosan digital profesional untuk membantu peniaga mengira kos produk dan menetapkan harga jualan dengan tepat.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
