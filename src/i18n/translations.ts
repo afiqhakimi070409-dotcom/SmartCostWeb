@@ -1,4 +1,4 @@
-export const SMARTCOST_SYSTEM_URL = 'https://remix-smartcost-pro.ai.studio';
+export const SMARTCOST_SYSTEM_URL = 'https://smartcost.ai.studio';
 
 export type Language = 'ms' | 'en';
 export type PageId = 'utama' | 'perkhidmatan' | 'bantuan' | 'mengenai';
